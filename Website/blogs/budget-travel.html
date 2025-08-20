@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Travel: How to Explore the World on a Shoestring - Bon Travels</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html#home">
+                    <img src="../destinations/erasebg-transformed.png" alt="bon TRAVELS" class="logo-image">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#book-flight" class="nav-link">
+                        <i class="fas fa-plane"></i>
+                        <span>Book a Flight</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blogs" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blogs</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>About Us</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Search Bar in Navigation -->
+            <div class="nav-search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search destinations, flights..." class="search-input">
+                    <button type="button" class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .blog-hero {
+            height: 50vh;
+            background: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .blog-content {
+            padding: 4rem 0;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .blog-main {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .blog-meta {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .blog-meta span {
+            margin-right: 1rem;
+        }
+        
+        .blog-meta i {
+            margin-right: 0.5rem;
+            color: #462c61;
+        }
+        
+        .tip-item {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 4px solid #462c61;
+        }
+        
+        .tip-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #462c61;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .tip-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .tip-content {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-widget h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .related-posts {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .related-posts li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .related-posts li:last-child {
+            border-bottom: none;
+        }
+        
+        .related-posts a {
+            color: #462c61;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .related-posts a:hover {
+            color: #de4185;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            background: #e9ecef;
+            color: #7f8c8d;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: #462c61;
+            color: white;
+        }
+        
+
+        
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-main {
+                padding: 2rem;
+            }
+        }
+    </style>
+
+
+    
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Budget Travel: How to Explore the World on a Shoestring</h1>
+            <p>Discover proven strategies to travel more while spending less</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-grid">
+                <div class="blog-main">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i>November 28, 2024</span>
+                        <span><i class="fas fa-user"></i>By Mike Chen</span>
+                        <span><i class="fas fa-folder"></i>Budget Travel</span>
+                        <span><i class="fas fa-clock"></i>7 min read</span>
+                    </div>
+                    
+                    <p>Traveling the world doesn't have to break the bank. With smart planning and a few insider tips, you can explore amazing destinations while keeping your wallet happy. Here are proven strategies that will help you travel more for less.</p>
+                    
+                    <div class="tip-item">
+                        <div class="tip-title">
+                            <span class="tip-number">1</span>
+                            Travel During Off-Peak Seasons
+                        </div>
+                        <div class="tip-content">
+                            Avoid peak tourist seasons when prices skyrocket. Travel during shoulder seasons (just before or after peak) to enjoy better weather, fewer crowds, and significantly lower prices on flights, accommodation, and activities. For example, visit Europe in May or September instead of July-August.
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-title">
+                            <span class="tip-number">2</span>
+                            Be Flexible with Your Travel Dates
+                        </div>
+                        <div class="tip-content">
+                            Use flight search engines that show you the cheapest days to fly. Often, flying on Tuesday, Wednesday, or Saturday can save you hundreds of dollars. Consider adjusting your travel dates by a few days to catch better deals.
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-title">
+                            <span class="tip-number">3</span>
+                            Choose Budget-Friendly Destinations
+                        </div>
+                        <div class="tip-content">
+                            Some countries offer incredible value for money. Consider destinations like Thailand, Vietnam, Portugal, Mexico, or Eastern European countries where your dollar goes much further. You can often live like a king on a backpacker's budget.
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-title">
+                            <span class="tip-number">4</span>
+                            Embrace Alternative Accommodation
+                        </div>
+                        <div class="tip-content">
+                            Skip expensive hotels and opt for hostels, guesthouses, Airbnb, or even Couchsurfing. Many hostels now offer private rooms that are clean and comfortable. Consider house-sitting opportunities for free accommodation in exchange for looking after someone's home and pets.
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-title">
+                            <span class="tip-number">5</span>
+                            Eat Like a Local
+                        </div>
+                        <div class="tip-content">
+                            Avoid tourist restaurants and seek out where locals eat. Street food is often the best and cheapest option. Visit local markets, cook your own meals when possible, and ask locals for recommendations. You'll not only save money but also have more authentic experiences.
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-title">
+                            <span class="tip-number">6</span>
+                            Use Public Transportation
+                        </div>
+                        <div class="tip-content">
+                            Public transportation is usually much cheaper than taxis or rental cars. Many cities offer tourist passes that include unlimited public transport and museum entries. Walking is also free and the best way to discover hidden gems.
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-title">
+                            <span class="tip-number">7</span>
+                            Take Advantage of Free Activities
+                        </div>
+                        <div class="tip-content">
+                            Many museums offer free entry on certain days. Look for free walking tours, public parks, beaches, and local festivals. Nature activities like hiking, swimming, and exploring are usually free and provide the most memorable experiences.
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; font-style: italic; color: #7f8c8d;">
+                        Remember, budget travel isn't about depriving yourself of experiences—it's about being smart with your money so you can travel longer and more frequently. The best travel memories often come from unexpected adventures that don't cost a fortune.
+                    </p>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Related Posts</h3>
+                        <ul class="related-posts">
+                            <li><a href="travel-tips.html">10 Essential Travel Tips for First-Time Travelers</a></li>
+                            <li><a href="hidden-gems.html">Hidden Gems: Off-the-Beaten-Path Destinations</a></li>
+                            <li><a href="#">Packing Tips for Different Climates</a></li>
+                            <li><a href="#">How to Overcome Travel Anxiety</a></li>
+                            <li><a href="#">Digital Nomad Essentials</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Tags</h3>
+                        <div class="tags">
+                            <span class="tag">Budget Travel</span>
+                            <span class="tag">Money Saving</span>
+                            <span class="tag">Travel Tips</span>
+                            <span class="tag">Backpacking</span>
+                            <span class="tag">Affordable</span>
+                            <span class="tag">Planning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>About the Author</h3>
+                        <p>Mike Chen is a budget travel expert who has visited over 50 countries on a shoestring budget. He believes that financial constraints should never limit your ability to explore the world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-plane"></i> Our Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Flight Booking</li>
+                        <li><i class="fas fa-check"></i> Hotel Reservations</li>
+                        <li><i class="fas fa-check"></i> Tour Packages</li>
+                        <li><i class="fas fa-check"></i> Travel Insurance</li>
+                        <li><i class="fas fa-check"></i> Visa Assistance</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-globe"></i> Popular Destinations</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Thailand</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Singapore</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Europe</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Japan</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Australia</li>
+                        <li><i class="fas fa-map-marker-alt"></i> United States</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-info-circle"></i> Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@bontravels.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City, AC 12345</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Sitemap</a>
+                </div>
+                <p>&copy; 2024 Bon Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

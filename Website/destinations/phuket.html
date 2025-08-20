@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuket - Bon Travels</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html#home">
+                    <img src="erasebg-transformed.png" alt="bon TRAVELS" class="logo-image">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#book-flight" class="nav-link">
+                        <i class="fas fa-plane"></i>
+                        <span>Book a Flight</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blogs" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blogs</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>About Us</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Search Bar in Navigation -->
+            <div class="nav-search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search destinations, flights..." class="search-input">
+                    <button type="button" class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="destination-hero">
+        <div class="container">
+            <h1>Phuket, Thailand</h1>
+            <p>The Pearl of the Andaman - Tropical paradise with pristine beaches and vibrant culture</p>
+        </div>
+    </div>
+    
+    <div class="destination-content">
+        <div class="container">
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3><i class="fas fa-umbrella-beach"></i> Patong Beach</h3>
+                    <p>Phuket's most famous beach, known for its vibrant nightlife, water sports, and golden sand stretching for 3.5 kilometers.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-mountain"></i> Big Buddha</h3>
+                    <p>Majestic 45-meter white marble Buddha statue offering panoramic views of the island and surrounding sea.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-ship"></i> Phi Phi Islands</h3>
+                    <p>Crystal clear waters, dramatic limestone cliffs, and pristine beaches perfect for snorkeling and diving.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-utensils"></i> Old Phuket Town</h3>
+                    <p>Historic Sino-Portuguese architecture, colorful buildings, and authentic local cuisine in the heart of the island.</p>
+                </div>
+            </div>
+            
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">What is the best time to visit Phuket?</div>
+                <div class="faq-answer">The best time to visit Phuket is during the dry season (November to April) when you can enjoy sunny weather and calm seas. The monsoon season (May to October) brings heavy rainfall but fewer tourists.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How do I get around Phuket?</div>
+                <div class="faq-answer">You can rent a motorbike, take tuk-tuks, use ride-sharing apps like Grab, or hire a private driver. For island hopping, speedboats and ferries are available.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is Phuket safe for tourists?</div>
+                <div class="faq-answer">Yes, Phuket is generally safe for tourists. However, be cautious of scams, use licensed transportation, and follow local customs and laws.</div>
+            </div>
+            
+            <h2>Best Seasons to Visit</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <h4>Dry Season (Nov-Apr)</h4>
+                    <p>Best weather, perfect for beaches and water activities</p>
+                </div>
+                <div class="season-card">
+                    <h4>Monsoon Season (May-Oct)</h4>
+                    <p>Heavy rainfall, fewer tourists, lower prices</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-plane"></i> Our Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Flight Booking</li>
+                        <li><i class="fas fa-check"></i> Hotel Reservations</li>
+                        <li><i class="fas fa-check"></i> Tour Packages</li>
+                        <li><i class="fas fa-check"></i> Travel Insurance</li>
+                        <li><i class="fas fa-check"></i> Visa Assistance</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-globe"></i> Popular Destinations</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Thailand</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Singapore</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Europe</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Japan</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Australia</li>
+                        <li><i class="fas fa-map-marker-alt"></i> United States</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-info-circle"></i> Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@bontravels.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City, AC 12345</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Sitemap</a>
+                </div>
+                <p>&copy; 2024 Bon Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

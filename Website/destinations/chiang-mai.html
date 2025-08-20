@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiang Mai - Bon Travels</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html#home">
+                    <img src="erasebg-transformed.png" alt="bon TRAVELS" class="logo-image">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#book-flight" class="nav-link">
+                        <i class="fas fa-plane"></i>
+                        <span>Book a Flight</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blogs" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blogs</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>About Us</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Search Bar in Navigation -->
+            <div class="nav-search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search destinations, flights..." class="search-input">
+                    <button type="button" class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="destination-hero">
+        <div class="container">
+            <h1>Chiang Mai, Thailand</h1>
+            <p>The Rose of the North - Ancient temples, mountain landscapes, and rich cultural heritage</p>
+        </div>
+    </div>
+    
+    <div class="destination-content">
+        <div class="container">
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3><i class="fas fa-landmark"></i> Old City Temples</h3>
+                    <p>Historic walled city with over 300 temples including Wat Phra Singh and Wat Chedi Luang, showcasing Lanna architecture.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-mountain"></i> Doi Suthep</h3>
+                    <p>Sacred mountain temple offering panoramic views of the city and surrounding countryside, accessible by cable car.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-shopping-bag"></i> Sunday Night Market</h3>
+                    <p>Famous walking street market with local crafts, street food, and live performances every Sunday evening.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-elephant"></i> Elephant Nature Park</h3>
+                    <p>Ethical elephant sanctuary where you can learn about and interact with rescued elephants in their natural habitat.</p>
+                </div>
+            </div>
+            
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">What is the best time to visit Chiang Mai?</div>
+                <div class="faq-answer">The best time to visit Chiang Mai is during the cool season (November to February) when temperatures are pleasant and the famous Yi Peng lantern festival takes place.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How many days should I spend in Chiang Mai?</div>
+                <div class="faq-answer">We recommend at least 3-4 days to explore the temples, markets, and surrounding nature. This allows time for day trips to nearby attractions.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is Chiang Mai safe for solo travelers?</div>
+                <div class="faq-answer">Yes, Chiang Mai is very safe for solo travelers. The city has a relaxed atmosphere and locals are friendly and helpful to visitors.</div>
+            </div>
+            
+            <h2>Best Seasons to Visit</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <h4>Cool Season (Nov-Feb)</h4>
+                    <p>Best weather, Yi Peng festival, perfect for outdoor activities</p>
+                </div>
+                <div class="season-card">
+                    <h4>Hot Season (Mar-Jun)</h4>
+                    <p>High temperatures, Songkran festival, good for indoor activities</p>
+                </div>
+                <div class="season-card">
+                    <h4>Rainy Season (Jul-Oct)</h4>
+                    <p>Heavy rainfall, lush greenery, fewer tourists</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-plane"></i> Our Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Flight Booking</li>
+                        <li><i class="fas fa-check"></i> Hotel Reservations</li>
+                        <li><i class="fas fa-check"></i> Tour Packages</li>
+                        <li><i class="fas fa-check"></i> Travel Insurance</li>
+                        <li><i class="fas fa-check"></i> Visa Assistance</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-globe"></i> Popular Destinations</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Thailand</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Singapore</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Europe</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Japan</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Australia</li>
+                        <li><i class="fas fa-map-marker-alt"></i> United States</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-info-circle"></i> Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@bontravels.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City, AC 12345</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Sitemap</a>
+                </div>
+                <p>&copy; 2024 Bon Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London - Bon Travels</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html#home">
+                    <img src="erasebg-transformed.png" alt="bon TRAVELS" class="logo-image">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#book-flight" class="nav-link">
+                        <i class="fas fa-plane"></i>
+                        <span>Book a Flight</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blogs" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blogs</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>About Us</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Search Bar in Navigation -->
+            <div class="nav-search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search destinations, flights..." class="search-input">
+                    <button type="button" class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="destination-hero">
+        <div class="container">
+            <h1>London, United Kingdom</h1>
+            <p>The Great City - Where history meets modernity in perfect harmony</p>
+        </div>
+    </div>
+    
+    <div class="destination-content">
+        <div class="container">
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3><i class="fas fa-city"></i> Big Ben & Houses of Parliament</h3>
+                    <p>Iconic symbol of London featuring the famous clock tower and the seat of British democracy, located along the River Thames.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-crown"></i> Buckingham Palace</h3>
+                    <p>Official residence of the British monarch, featuring the famous Changing of the Guard ceremony and stunning royal architecture.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-landmark"></i> British Museum</h3>
+                    <p>World-renowned museum housing over 8 million works, including the Rosetta Stone and Parthenon sculptures.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-utensils"></i> Borough Market</h3>
+                    <p>London's most famous food market, offering fresh produce, artisanal foods, and international cuisine in a historic setting.</p>
+                </div>
+            </div>
+            
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">What is the best time to visit London?</div>
+                <div class="faq-answer">Spring (March to May) and early autumn (September to October) offer pleasant weather and fewer crowds. Summer is popular but busy, while winter is cold but magical with Christmas decorations.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How do I get around London?</div>
+                <div class="faq-answer">London has an excellent public transport system including the Underground (Tube), buses, and trains. Get an Oyster card or use contactless payment for the best rates. Walking is also great for exploring central areas.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is London expensive to visit?</div>
+                <div class="faq-answer">London can be expensive, but there are many free attractions like museums, parks, and walking tours. Plan ahead, use public transport, and consider staying in less central areas to save money.</div>
+            </div>
+            
+            <h2>Best Seasons to Visit</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <h4>Spring (Mar-May)</h4>
+                    <p>Cherry blossoms, mild weather, perfect for outdoor activities</p>
+                </div>
+                <div class="season-card">
+                    <h4>Summer (Jun-Aug)</h4>
+                    <p>Warm weather, outdoor festivals, longer days</p>
+                </div>
+                <div class="season-card">
+                    <h4>Autumn (Sep-Nov)</h4>
+                    <p>Beautiful fall colors, fewer tourists, pleasant temperatures</p>
+                </div>
+                <div class="season-card">
+                    <h4>Winter (Dec-Feb)</h4>
+                    <p>Christmas markets, holiday decorations, cozy atmosphere</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-plane"></i> Our Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Flight Booking</li>
+                        <li><i class="fas fa-check"></i> Hotel Reservations</li>
+                        <li><i class="fas fa-check"></i> Tour Packages</li>
+                        <li><i class="fas fa-check"></i> Travel Insurance</li>
+                        <li><i class="fas fa-check"></i> Visa Assistance</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-globe"></i> Popular Destinations</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Thailand</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Singapore</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Europe</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Japan</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Australia</li>
+                        <li><i class="fas fa-map-marker-alt"></i> United States</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-info-circle"></i> Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@bontravels.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City, AC 12345</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Sitemap</a>
+                </div>
+                <p>&copy; 2024 Bon Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
